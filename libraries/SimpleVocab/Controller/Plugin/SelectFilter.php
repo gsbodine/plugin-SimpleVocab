@@ -24,6 +24,8 @@ class SimpleVocab_Controller_Plugin_SelectFilter extends Zend_Controller_Plugin_
               'actions' => array('add', 'edit', 'change-type')), 
         array('module' => 'default', 'controller' => 'elements', 
               'actions' => array('element-form')), 
+        array('module' => 'crowd-ed', 'controller' => 'participate',
+              'actions' => array('edit')),
     );
     
     /**
@@ -84,7 +86,7 @@ class SimpleVocab_Controller_Plugin_SelectFilter extends Zend_Controller_Plugin_
         $components['input'] = get_view()->formSelect(
             $args['input_name_stem'] . '[text]', 
             $args['value'], 
-            array('style' => 'width: 300px;'), 
+            array(), 
             $selectTerms
         );
         $components['html_checkbox'] = false;
